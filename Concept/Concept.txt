@@ -84,7 +84,7 @@ Inventions
 	- E2E4D9 - Application Background
 	- E7DED0
 	- D4CFC3 - Borders on buttson
-	- b29f96 - Outer circle
+	- b29f96 - Outer circle & upgrade
 	- 7D6F69
 	- f1f3e8 - Button backgrounds
 
@@ -93,7 +93,7 @@ Inventions
 - School of round things
 	- Earth
 		- Rocks
-		- Buildins
+		- Buildings
 	- Water
 		- Machines
 			- Cyborgs
