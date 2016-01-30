@@ -87,3 +87,25 @@ Inventions
 	- b29f96 - Outer circle
 	- 7D6F69
 	- f1f3e8 - Button backgrounds
+
+
+
+- School of round things
+	- Earth
+		- Rocks
+		- Buildins
+	- Water
+		- Machines
+			- Cyborgs
+				- AI
+			- Vehicles
+				- Space
+					- Colonization
+					- Dimensional things
+- Non round university
+	- Fire
+		- Electricity
+			- Computers
+		- Arts
+	- Wind
+		- Philosophy
