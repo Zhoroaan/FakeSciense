@@ -35,3 +35,21 @@ Inventions
 	Electricity - mineable
 	Silicon - mineable
 	Stone - mineable
+
+
+
+- Features
+	- Schools
+		- Collection (where schools can be added nicely)
+		- Schools can be upgraded
+		- Schools produces geniuses in "classes that take a bit of time"
+		- Upgrading school cancels current class
+		- Geniuses can be assigned to research projects
+		- Geniuses can be unassigned to research projects
+	- Geniuses
+		- Levels upp during the game
+		- Every Major school update transfer the currently pooled geniuses to resource collection
+	- Console
+		- Update with new events
+		- Needs support for colors {00ff22} {}
+		- Animate scroll with multiple messages
