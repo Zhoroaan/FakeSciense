@@ -30,8 +30,8 @@ public class Schools : MonoBehaviour {
             gameObject.GetComponentInChildren<Text>().text = Name;
             SchoolReference = gameObject;
             progressImageControll = gameObject.GetComponent<Image>();
-
         }
+
         public void Update() {
             CurrentTermProgress += TermProgressSpeed * Time.deltaTime;
             if(CurrentTermProgress > 1) {
