@@ -7,36 +7,36 @@ public class Schools : MonoBehaviour {
     public RectTransform SchoolPrefab;
     List<School> currentSchools = new List<School>();
 
-	// Use this for initialization
-	void Start () {
-        var dimensional = new School() { Name = "School of dimensional things", TermProgressSpeed = 0.03f };
-        var colonization = new School() { Name = "Colonization ministry", TermProgressSpeed = 0.01f };
-        var space = new School() { Name = "Colonization ministry", TermProgressSpeed = 0.02f, LeedsTo = {dimensional, colonization } };
-        var vehicles = new School() { Name = "Cars and stuff ltd", TermProgressSpeed = 0.01f, LeedsTo = { space } };
+    // Use this for initialization
+    void Start () {
+        var dimensional = new School() { Name = "School of dimensional things", TermProgressSpeed = 0.3f };
+        var colonization = new School() { Name = "Colonization ministry", TermProgressSpeed = 0.1f };
+        var space = new School() { Name = "Colonization ministry", TermProgressSpeed = 0.2f, LeedsTo = {dimensional, colonization } };
+        var vehicles = new School() { Name = "Cars and stuff ltd", TermProgressSpeed = 0.1f, LeedsTo = { space } };
 
-        var ai = new School() { Name = "Online univeristy", TermProgressSpeed = 0.01f };
-        var cyborgs = new School() { Name = "School of cybornetics", TermProgressSpeed = 0.01f, LeedsTo = { ai } };
+        var ai = new School() { Name = "Online univeristy", TermProgressSpeed = 0.1f };
+        var cyborgs = new School() { Name = "School of cybornetics", TermProgressSpeed = 0.1f, LeedsTo = { ai } };
 
-        var machines = new School() { Name = "Machineries", TermProgressSpeed = 0.01f, LeedsTo = { cyborgs, vehicles } };
-        var water = new School() { Name = "Block: Water", TermProgressSpeed = 0.01f, LeedsTo = { machines } };
+        var machines = new School() { Name = "Machineries", TermProgressSpeed = 0.1f, LeedsTo = { cyborgs, vehicles } };
+        var water = new School() { Name = "Block: Water", TermProgressSpeed = 0.1f, LeedsTo = { machines } };
 
-        var rocks = new School() { Name = "Geology and stone things", TermProgressSpeed = 0.01f };
-        var buildings = new School() { Name = "Tall block development", TermProgressSpeed = 0.01f };
-        var earth = new School() { Name = "Block: Earth", TermProgressSpeed = 0.01f, LeedsTo = { rocks, buildings } };
+        var rocks = new School() { Name = "Geology and stone things", TermProgressSpeed = 0.1f };
+        var buildings = new School() { Name = "Tall block development", TermProgressSpeed = 0.1f };
+        var earth = new School() { Name = "Block: Earth", TermProgressSpeed = 0.1f, LeedsTo = { rocks, buildings } };
 
-        var roundThings = new School() { Name = "School of round things", TermProgressSpeed = 0.01f, LeedsTo = { water, earth } };
+        var roundThings = new School() { Name = "School of round things", TermProgressSpeed = 0.1f, LeedsTo = { water, earth } };
 
 
-        var computers = new School() { Name = "Silicon university", TermProgressSpeed = 0.01f };
-        var electricity = new School() { Name = "Ark university", TermProgressSpeed = 0.01f, LeedsTo = { computers } };
+        var computers = new School() { Name = "Silicon university", TermProgressSpeed = 0.1f };
+        var electricity = new School() { Name = "Ark university", TermProgressSpeed = 0.1f, LeedsTo = { computers } };
 
-        var arts = new School() { Name = "Art schoool", TermProgressSpeed = 0.01f };
-        var fire = new School() { Name = "Block Fire", TermProgressSpeed = 0.01f, LeedsTo = { arts, electricity } };
+        var arts = new School() { Name = "Art schoool", TermProgressSpeed = 0.1f };
+        var fire = new School() { Name = "Block Fire", TermProgressSpeed = 0.1f, LeedsTo = { arts, electricity } };
 
-        var philosphy = new School() { Name = "Thinking university", TermProgressSpeed = 0.01f };
-        var wind = new School() { Name = "Block: Wind", TermProgressSpeed = 0.01f, LeedsTo = { philosphy } };
+        var philosphy = new School() { Name = "Thinking university", TermProgressSpeed = 0.1f };
+        var wind = new School() { Name = "Block: Wind", TermProgressSpeed = 0.1f, LeedsTo = { philosphy } };
 
-        var nonRoundThings = new School() { Name = "Nonround university", TermProgressSpeed = 0.01f, LeedsTo = { fire, wind } };
+        var nonRoundThings = new School() { Name = "Nonround university", TermProgressSpeed = 0.1f, LeedsTo = { fire, wind } };
 
         currentSchools.Add(roundThings);
         currentSchools.Add(nonRoundThings);

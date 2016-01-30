@@ -6,6 +6,7 @@ using System;
 public class School {
     public School() {
         LeedsTo = new List<School>();
+        NumberOfGStudentsInClass = 1000;
     }
     public string Name { get; set; }
     public List<School> LeedsTo {
@@ -34,6 +35,7 @@ public class School {
         SchoolReference = gameObject;
         progressImageControll = gameObject.GetComponent<Image>();
         gameObject.GetComponentInChildren<UpgradeButton>().SchoolReference = this;
+        gameObject.GetComponentInChildren<GeniusCounter>().SchoolReference = this;
         TargetRotation = Rotation;
         SetPositionFromRotation();
     }
@@ -62,7 +64,10 @@ public class School {
 
     private void NewClass() {
         CurrentTermProgress = 0;
-        NumberOfGeniusesInPool += (Int64)(NumberOfGStudentsInClass * 0.01);
+        var numberOfGeniuses = (Int64)(NumberOfGStudentsInClass * 0.01);
+        SchoolReference.transform.root.BroadcastMessage("AddText", numberOfGeniuses.ToString() + " geniuses graduated from " + Name + ".");
+        SchoolReference.transform.root.BroadcastMessage("AddText", (NumberOfGStudentsInClass - numberOfGeniuses).ToString() + " moved to resource gathering.");
+        NumberOfGeniusesInPool += numberOfGeniuses;
         NumberOfGStudentsInClass = 1000;
     }
 }
