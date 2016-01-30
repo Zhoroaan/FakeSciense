@@ -49,6 +49,10 @@ public class Console : MonoBehaviour {
         }
     }
 
+    public void AddText(string newLine) {
+        AddConsoleText(newLine, null);
+    }
+
     void AddConsoleText(string newLine, Color? colorToUse) {
         if(!colorToUse.HasValue) {
             textLines.Add(newLine);

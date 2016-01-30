@@ -66,6 +66,7 @@ public class Schools : MonoBehaviour {
                     newSchool.Rotation = Quaternion.Euler(0, 0, startDegrees * a);
                     newSchool.Spawn(SchoolPrefab, transform);
                     currentSchools.Insert(a, newSchool);
+                    transform.root.BroadcastMessage("AddText", "Started new institution: " + newSchool.Name);
                 }
                 Destroy(school.SchoolReference);
                 currentSchools.Remove(school);
