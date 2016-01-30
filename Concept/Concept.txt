@@ -61,16 +61,15 @@ Inventions
 
 
 - Needed graphics
-	- School Circle
+	# School Circle
 	- Science Button
-	- Plus
-	- Minus
+	# Plus
+	# Minus
 	- School dialog
-	- School progress
-	- Progress ring
-	- Close School dialog
-	- Resource
-	- Resources Box
+	# Progress ring
+	# Close School dialog
+	# Resource
+	# Resources Box
 	- Resource represenation
 		- Coal
 		- Iron
@@ -79,3 +78,12 @@ Inventions
 		- Electricity
 		- Silicon
 		- Stone
+
+- Colors
+	- 130C08 - Text
+	- E2E4D9 - Application Background
+	- E7DED0
+	- D4CFC3 - Borders on buttson
+	- b29f96 - Outer circle
+	- 7D6F69
+	- f1f3e8 - Button backgrounds
