@@ -22,7 +22,8 @@ Inventions
 	Truck
 	Train
 	Steamengine
-	Steel - mineable
+	Steel
+	Iron - mineable
 	Coal - mineable
 	Beryllium - mineable
 	Diod circuts
@@ -35,6 +36,7 @@ Inventions
 	Electricity - mineable
 	Silicon - mineable
 	Stone - mineable
+	Gold - mineable
 
 
 
@@ -49,7 +51,31 @@ Inventions
 	- Geniuses
 		- Levels upp during the game
 		- Every Major school update transfer the currently pooled geniuses to resource collection
+	- Resources
+		- Allocate gatherers
+		- Deallocate gatherers
 	- Console
 		- Update with new events
 		- Needs support for colors {00ff22} {}
 		- Animate scroll with multiple messages
+
+
+- Needed graphics
+	- School Circle
+	- Science Button
+	- Plus
+	- Minus
+	- School dialog
+	- School progress
+	- Progress ring
+	- Close School dialog
+	- Resource
+	- Resources Box
+	- Resource represenation
+		- Coal
+		- Iron
+		- Beryllium
+		- Trees
+		- Electricity
+		- Silicon
+		- Stone
