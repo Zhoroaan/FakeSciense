@@ -1,14 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 using System;
+using Assets.Scripts.Inventions;
 
 public class Schools : MonoBehaviour {
 
     public RectTransform SchoolPrefab;
     List<School> currentSchools = new List<School>();
+    static Schools instance;
 
     // Use this for initialization
     void Start () {
+        instance = this;
         var dimensional = new School(School.Type.dimensional, "School of dimensional things") { TermProgressSpeed = 0.3f };
         var colonization = new School(School.Type.colonization, "Colonization ministry") {TermProgressSpeed = 0.1f };
         var space = new School(School.Type.space, "Colonization ministry") {
@@ -105,6 +108,84 @@ public class Schools : MonoBehaviour {
             currentSchools[a].Rotation = Quaternion.Euler(0, 0, startDegrees * a + 45);
             currentSchools[a].Spawn(SchoolPrefab, transform);
         }
+    }
+
+    public static bool CanSeeInvention(IInvention invention) {
+        foreach(var cost in invention.Costs) {
+            if(!FoundMatchingQualification(cost)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static bool MeetsRequirement(GeniusCost cost) {
+        Int64 count = 0;
+        foreach(var s in instance.currentSchools) {
+            foreach(var q in s.Qualifications) {
+                if(q.SchoolType == cost.Type) {
+                    count += s.NumberOfGeniusesInPool;
+                }
+            }
+        }
+        return count >= cost.Count;
+    }
+
+    private static bool FoundMatchingQualification(GeniusCost cost) {
+        foreach(var s in instance.currentSchools) {
+            foreach(var q in s.Qualifications) {
+                if(q.SchoolType == cost.Type) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    public static bool TryMakeInvention(IInvention invention) {
+        Int64[] counters = new Int64[(int)School.Type._Count];
+        foreach(var c in invention.Costs) {
+            counters[(int)c.Type] = c.Count;
+        }
+        if(CanSeeInvention(invention) && HasEnoughGeniuses(invention)) {
+            foreach(var s in instance.currentSchools) {
+                foreach(var q in s.Qualifications) {
+                    if(counters[(int)q.SchoolType] != 0) {
+                        if(s.NumberOfGeniusesInPool > counters[(int)q.SchoolType]) {
+                            s.NumberOfGeniusesInPool -= counters[(int)q.SchoolType];
+                            counters[(int)q.SchoolType] = 0;
+                        } else if(s.NumberOfGeniusesInPool != 0) {
+                            var count = s.NumberOfGeniusesInPool;
+                            s.NumberOfGeniusesInPool = 0;
+                            counters[(int)q.SchoolType] -= count;
+                        }
+                    }
+                }
+            }
+        }
+        foreach(var c in invention.Costs) {
+            if(counters[(int)c.Type] != 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    static bool HasEnoughGeniuses(IInvention invention) {
+        Int64[] counters = new Int64[(int)School.Type._Count];
+
+        foreach(var s in instance.currentSchools) {
+            foreach(var q in s.Qualifications) {
+                counters[(int)q.SchoolType] += s.NumberOfGeniusesInPool;
+            }
+        }
+
+        foreach(var cost in invention.Costs) {
+            if(counters[(int)cost.Type] < cost.Count) {
+                return false;
+            }
+        }
+        return true;
     }
 
     School.UpgradeRequirement Requirement(ResourceType type, Int64 count) {

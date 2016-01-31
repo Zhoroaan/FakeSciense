@@ -18,7 +18,7 @@ public class ResourceCount : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         var count = showTotalCount ? BuildResource.FreeWorkers : BuildResource.GetResource(resourceType).Count;
-        textElement.text = count.ToString();
+        textElement.text = Util.NiceLongString(count);
         // Hide resource text if hidden
         var alpha = count != 0 ? 1 : 0;
         countRenderer.SetAlpha(alpha);

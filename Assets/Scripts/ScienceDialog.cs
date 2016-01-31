@@ -23,14 +23,19 @@ public class ScienceDialog : MonoBehaviour {
             foreach(Transform child in container) {
                 Destroy(child.gameObject);
             }
+            int elementsAddedCounter = 0;
             for(int a = 0; a < currentInventions.Count; ++a) {
-                var newTransform = (Transform)Instantiate(researchButtonPrefab, transform.position, transform.rotation);
-                newTransform.parent = container;
-                var rectTransform = newTransform.GetComponent<RectTransform>();
-                rectTransform.anchoredPosition = new Vector2(a * 15, -10);
-                var newButton = newTransform.GetComponent<ScienceReserachButton>();
-                newButton.detailsText = detailsText;
-                newButton.invention = currentInventions[a];
+                if(Schools.CanSeeInvention(currentInventions[a])) {
+                    var newTransform = (Transform)Instantiate(researchButtonPrefab, transform.position, transform.rotation);
+                    newTransform.SetParent(container);
+                    var rectTransform = newTransform.GetComponent<RectTransform>();
+                    rectTransform.anchoredPosition = new Vector2(elementsAddedCounter * 15, -10);
+                    var newButton = newTransform.GetComponent<ScienceReserachButton>();
+                    newButton.detailsText = detailsText;
+                    newButton.invention = currentInventions[a];
+                    elementsAddedCounter++;
+                }
+
             }
         }
     }

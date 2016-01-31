@@ -152,9 +152,9 @@ public class School {
     private void NewClass() {
         CurrentTermProgress = 0;
         var numberOfGeniuses = (Int64)(NumberOfGStudentsInClass * 0.01);
-        SchoolReference.transform.root.BroadcastMessage("AddText", numberOfGeniuses.ToString() + " geniuses graduated from " + Name + ".");
+        SchoolReference.transform.root.BroadcastMessage("AddText", Util.NiceLongString(numberOfGeniuses) + " geniuses graduated from " + Name + ".");
         var numberOfWorkers = NumberOfGStudentsInClass - numberOfGeniuses;
-        SchoolReference.transform.root.BroadcastMessage("AddText", numberOfWorkers.ToString() + " moved to resource gathering.");
+        SchoolReference.transform.root.BroadcastMessage("AddText", Util.NiceLongString(numberOfWorkers) + " moved to resource gathering.");
         BuildResource.FreeWorkers += numberOfWorkers;
         NumberOfGeniusesInPool += numberOfGeniuses;
         NumberOfGStudentsInClass = GetNumberOfStudentsToAdd();

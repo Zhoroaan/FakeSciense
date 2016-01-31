@@ -12,6 +12,6 @@ public class GeniusCounter : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-        textComponent.text = SchoolReference.NumberOfGeniusesInPool.ToString();
+        textComponent.text = Util.NiceLongString(SchoolReference.NumberOfGeniusesInPool);
     }
 }

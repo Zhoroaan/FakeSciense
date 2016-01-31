@@ -39,7 +39,7 @@ public class ResourcePool : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        countText.text = peopleInPool.ToString();
+        countText.text = Util.NiceLongString(peopleInPool);
         if(peopleInPool != 0) {
             progressImage.fillAmount += Time.deltaTime * 0.3f;
             if(progressImage.fillAmount >= 1) {
