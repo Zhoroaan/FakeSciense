@@ -44,7 +44,7 @@ public class Schools : MonoBehaviour {
         float startDegrees = 360.0f / currentSchools.Count;
 
         for(int a = 0; a < currentSchools.Count; ++a) {
-            currentSchools[a].Rotation = Quaternion.Euler(0, 0, startDegrees * a);
+            currentSchools[a].Rotation = Quaternion.Euler(0, 0, startDegrees * a + 45);
             currentSchools[a].Spawn(SchoolPrefab, transform);
         }
     }
@@ -79,7 +79,7 @@ public class Schools : MonoBehaviour {
         float startDegrees = 360.0f / currentSchools.Count;
 
         for(int a = 0; a < currentSchools.Count; ++a) {
-            currentSchools[a].UpdatePosition(Quaternion.Euler(0, 0, startDegrees * a));
+            currentSchools[a].UpdatePosition(Quaternion.Euler(0, 0, startDegrees * a + 45));
         }
     }
 }
