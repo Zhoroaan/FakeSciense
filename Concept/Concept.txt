@@ -122,6 +122,7 @@ Tasks for Sunday:
 	# Only show upgrade when user can upgrade
 	# Remove resources on upgrade
 	# Add resources over time
+	# Add qualifications for schools
 	- Add science button
 	- Add geniuses to project
 	- Remove geniuses from project	

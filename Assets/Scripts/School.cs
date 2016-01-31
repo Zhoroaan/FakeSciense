@@ -13,10 +13,40 @@ public class School {
         public Int64 Count { get; set; }
     }
 
-    public School() {
+    public enum Type {
+        dimensional,
+        colonization,
+        space,
+        vehicles,
+        ai,
+        cyborgs,
+        machines,
+        water,
+        rocks,
+        buildings,
+        earth,
+        roundThings,
+        computers,
+        electricity,
+        arts,
+        fire,
+        philosphy,
+        wind,
+        nonRoundThings,
+    }
+
+    public class SchoolTypeInformation {
+        public Type SchoolType { get; set; }
+        public string Name { get; set; }
+    }
+
+    public School(Type type, string name) {
+        SchoolType = new SchoolTypeInformation() { SchoolType = type, Name = name };
+        Qualifications = new List<SchoolTypeInformation>();
         LeedsTo = new List<School>();
         Requirements = new List<UpgradeRequirement>();
         NumberOfGStudentsInClass = GetNumberOfStudentsToAdd();
+        Qualifications.Add(SchoolType);
     }
 
     public string Name { get; set; }
@@ -24,7 +54,16 @@ public class School {
         get; set;
     }
 
+    public List<SchoolTypeInformation> Qualifications {
+        get;
+        set;
+    }
+
     public List<UpgradeRequirement> Requirements {
+        get; set;
+    }
+
+    public SchoolTypeInformation SchoolType {
         get; set;
     }
 
