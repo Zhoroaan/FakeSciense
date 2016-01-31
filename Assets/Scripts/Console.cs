@@ -17,6 +17,7 @@ public class Console : MonoBehaviour {
         textStyle.normal.textColor = color;
         textStyle.hover.textColor = color;
         textStyle.richText = true;
+        AddText("Start Game");
     }
 
     // Update is called once per frame
@@ -26,11 +27,11 @@ public class Console : MonoBehaviour {
 
     void OnGUI() {
         var xPos = Screen.width / 2 + 20;
-        int yPos = 25;
+        int yPos = 20;
         int boxWidth = Screen.width / 2 - 40;
-        int boxHeight = Screen.height - 50;
+        int boxHeight = Screen.height / 2 - 40;
         GUI.color = Color.white;
-        GUI.BeginGroup(new Rect(xPos, yPos, boxWidth, boxHeight));
+        GUI.BeginGroup(new Rect(xPos, yPos, boxWidth, boxHeight + 5));
         DrawConsoleLines(xPos, boxHeight - LineHeight);
         GUI.EndGroup();
     }

@@ -109,3 +109,21 @@ Inventions
 		- Arts
 	- Wind
 		- Philosophy
+
+Tasks for Sunday:
+	# Add resource gatherers
+	# Show resources
+	- Show resources beeing gathered
+	- Allow to assign workers to resource
+	- Allow to remove workers from resource
+	- Add resource cost for schools
+	- Only show upgrade when user can upgrade
+	- Remove resources on upgrade
+	- Add resources over time
+	- Add science button
+	- Add geniuses to project
+	- Remove geniuses from project	
+	- Add ~50 resource modifiers
+	- School resource page
+	- (Compress big numbers)
+	- (Bad events)

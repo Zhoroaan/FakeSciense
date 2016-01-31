@@ -3,19 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-public enum ResourceTypes {
+public enum ResourceType {
+    Stone,
     Tree,
     Coal,
     Iron,
-    Beryllium,
     Electricity,
     Silicon,
-    Stone,
+    Beryllium,
     _Count
 }
 
 public class BuildResource {
-    public ResourceTypes Type { get; set; }
+    public ResourceType Type { get; set; }
     public string Name { get; set; }
     public Int64 Count { get; set; }
     public static BuildResource[] Resources {
@@ -24,22 +24,33 @@ public class BuildResource {
         }
     }
 
-    public static BuildResource GetResource(ResourceTypes type) {
+    public static Int64 FreeWorkers {
+        get {
+            return instance.Count;
+        }
+        set {
+            instance.Count = value;
+        }
+    }
+
+    public static BuildResource GetResource(ResourceType type) {
         return instance.resources[(int)type];
     }
 
-    private static BuildResource instance = new BuildResource();
+    private static BuildResource instance = new BuildResource(true);
     BuildResource[] resources;
 
-    private BuildResource() {
-        resources = new BuildResource[] {
-            new BuildResource() { Type = ResourceTypes.Tree, Name = "Trees" },
-            new BuildResource() { Type = ResourceTypes.Coal, Name = "Coal" },
-            new BuildResource() { Type = ResourceTypes.Iron, Name = "Iron" },
-            new BuildResource() { Type = ResourceTypes.Beryllium, Name = "Beryllium" },
-            new BuildResource() { Type = ResourceTypes.Electricity, Name = "Electricity" },
-            new BuildResource() { Type = ResourceTypes.Silicon, Name = "Silicon" },
-            new BuildResource() { Type = ResourceTypes.Stone, Name = "Stone" }
-        };
+    private BuildResource(bool initilizedResource) {
+        if(initilizedResource) {
+            resources = new BuildResource[] {
+                new BuildResource(false) { Type = ResourceType.Tree, Name = "Trees" },
+                new BuildResource(false) { Type = ResourceType.Coal, Name = "Coal" },
+                new BuildResource(false) { Type = ResourceType.Iron, Name = "Iron" },
+                new BuildResource(false) { Type = ResourceType.Beryllium, Name = "Beryllium" },
+                new BuildResource(false) { Type = ResourceType.Electricity, Name = "Electricity" },
+                new BuildResource(false) { Type = ResourceType.Silicon, Name = "Silicon" },
+                new BuildResource(false) { Type = ResourceType.Stone, Name = "Stone" }
+            };
+        }
     }
 }
