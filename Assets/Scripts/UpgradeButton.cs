@@ -13,9 +13,11 @@ public class UpgradeButton : MonoBehaviour {
     public void Click() {
         SendMessageUpwards("UpdateSchool", SchoolReference.Name);
     }
+
     bool IsHidden() {
-        return SchoolReference.LeedsTo.Count == 0;
+        return !SchoolReference.CanUpgrade();
     }
+
     public void Update() {
         if(IsHidden() == ButtonControll.enabled) {
             if(IsHidden()) {

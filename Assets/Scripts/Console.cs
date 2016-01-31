@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System;
 
 public class Console : MonoBehaviour {
+    public static bool ShowConsole = true;
     GUIStyle textStyle = new GUIStyle();
     List<string> textLines = new List<string>();
     public int LineHeight = 12;
@@ -27,14 +28,17 @@ public class Console : MonoBehaviour {
 	}
 
     void OnGUI() {
-        var xPos = Screen.width / 2 + 20;
-        int yPos = 20;
-        int boxWidth = Screen.width / 2 - 40;
-        int boxHeight = Screen.height / 2 - 40;
-        GUI.color = Color.white;
-        GUI.BeginGroup(new Rect(xPos, yPos, boxWidth, boxHeight + 5));
-        DrawConsoleLines(xPos, boxHeight - LineHeight);
-        GUI.EndGroup();
+        if(ShowConsole) {
+            var xPos = Screen.width / 2 + 20;
+            int yPos = 20;
+            int boxWidth = Screen.width / 2 - 40;
+            int boxHeight = Screen.height / 2 - 40;
+            GUI.color = Color.white;
+            GUI.depth = -200;
+            GUI.BeginGroup(new Rect(xPos, yPos, boxWidth, boxHeight + 5));
+            DrawConsoleLines(xPos, boxHeight - LineHeight);
+            GUI.EndGroup();
+        }
     }
 
     private void DrawConsoleLines(int xPos, int yPos) {

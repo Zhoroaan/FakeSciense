@@ -8,7 +8,6 @@ public class GeniusCounter : MonoBehaviour {
     // Use this for initialization
     void Start () {
         textComponent = GetComponent<Text>();
-
     }
 
 	// Update is called once per frame

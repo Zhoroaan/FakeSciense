@@ -115,17 +115,19 @@ Tasks for Sunday:
 	# Show resources
 	# Add students based on number of people
 	# Show resources beeing gathered
-	- Limit mineable resources
-	- Allow to assign workers to resource
-	- Allow to remove workers from resource
-	- Add resource cost for schools
-	- Only show upgrade when user can upgrade
-	- Remove resources on upgrade
-	- Add resources over time
+	# Allow to assign workers to resource
+	# Allow to remove workers from resource
+	# Add school details page
+	# Add resource cost for schools
+	# Only show upgrade when user can upgrade
+	# Remove resources on upgrade
+	# Add resources over time
 	- Add science button
 	- Add geniuses to project
 	- Remove geniuses from project	
 	- Add ~50 resource modifiers
-	- School resource page
+	- Add mine inovations
+	- Limit mineable resources
+	# School resource page
 	- (Compress big numbers)
 	- (Bad events)
