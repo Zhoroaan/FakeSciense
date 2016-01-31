@@ -33,6 +33,16 @@ public class BuildResource {
         }
     }
 
+    public static Int64 CountWorkers {
+        get {
+            var numberOfWorkers = instance.Count;
+            foreach(var resource in instance.resources) {
+                numberOfWorkers += resource.Count;
+            }
+            return numberOfWorkers;
+        }
+    }
+
     public static BuildResource GetResource(ResourceType type) {
         return instance.resources[(int)type];
     }
@@ -42,6 +52,7 @@ public class BuildResource {
 
     private BuildResource(bool initilizedResource) {
         if(initilizedResource) {
+            Count = 100000;
             resources = new BuildResource[] {
                 new BuildResource(false) { Type = ResourceType.Tree, Name = "Trees" },
                 new BuildResource(false) { Type = ResourceType.Coal, Name = "Coal" },

@@ -113,6 +113,7 @@ Inventions
 Tasks for Sunday:
 	# Add resource gatherers
 	# Show resources
+	- Add students based on number of people
 	- Show resources beeing gathered
 	- Allow to assign workers to resource
 	- Allow to remove workers from resource

@@ -6,7 +6,7 @@ using System;
 public class School {
     public School() {
         LeedsTo = new List<School>();
-        NumberOfGStudentsInClass = 1000;
+        NumberOfGStudentsInClass = GetNumberOfStudentsToAdd();
     }
     public string Name { get; set; }
     public List<School> LeedsTo {
@@ -70,6 +70,10 @@ public class School {
         SchoolReference.transform.root.BroadcastMessage("AddText", numberOfWorkers.ToString() + " moved to resource gathering.");
         BuildResource.FreeWorkers += numberOfWorkers;
         NumberOfGeniusesInPool += numberOfGeniuses;
-        NumberOfGStudentsInClass = 1000;
+        NumberOfGStudentsInClass = GetNumberOfStudentsToAdd();
+    }
+
+    Int64 GetNumberOfStudentsToAdd() {
+        return (Int64)(BuildResource.CountWorkers * 0.1);
     }
 }
