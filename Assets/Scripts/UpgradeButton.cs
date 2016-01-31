@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class UpgradeButton : MonoBehaviour {
     public School SchoolReference { get; set; }
-    public Button ButtonControll;
+    private Button ButtonControll;
 
     public void Start() {
         ButtonControll = GetComponent<Button>();

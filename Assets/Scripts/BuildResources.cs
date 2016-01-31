@@ -18,6 +18,7 @@ public class BuildResource {
     public ResourceType Type { get; set; }
     public string Name { get; set; }
     public Int64 Count { get; set; }
+    public bool Unlocked { get; set; }
     public static BuildResource[] Resources {
         get {
             return instance.resources;
@@ -54,7 +55,7 @@ public class BuildResource {
         if(initilizedResource) {
             Count = 10000;
             resources = new BuildResource[] {
-                new BuildResource(false) { Type = ResourceType.Stone, Name = "Stone" },
+                new BuildResource(false) { Type = ResourceType.Stone, Name = "Stone", Unlocked = true },
                 new BuildResource(false) { Type = ResourceType.Tree, Name = "Trees" },
                 new BuildResource(false) { Type = ResourceType.Coal, Name = "Coal" },
                 new BuildResource(false) { Type = ResourceType.Iron, Name = "Iron" },
@@ -63,5 +64,6 @@ public class BuildResource {
                 new BuildResource(false) { Type = ResourceType.Beryllium, Name = "Beryllium" }
             };
         }
+        Unlocked = false;
     }
 }

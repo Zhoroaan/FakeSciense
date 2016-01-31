@@ -1782,6 +1782,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 224: {fileID: 953342415}
+  - 114: {fileID: 953342416}
   m_Layer: 5
   m_Name: ResourcePools
   m_TagString: Untagged
@@ -1813,6 +1814,25 @@ RectTransform:
   m_AnchoredPosition: {x: 68.35001, y: -0.0000064373016}
   m_SizeDelta: {x: 372.3, y: 134}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &953342416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 953342414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9afec315ecc0e5e4ea4d3d9a5b3b9177, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pools:
+  - {fileID: 708338996}
+  - {fileID: 1811429659}
+  - {fileID: 751843148}
+  - {fileID: 904839016}
+  - {fileID: 1588223176}
+  - {fileID: 1950742557}
+  - {fileID: 192326487}
 --- !u!1 &968449267
 GameObject:
   m_ObjectHideFlags: 0

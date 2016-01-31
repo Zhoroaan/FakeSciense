@@ -33,7 +33,7 @@ public class Schools : MonoBehaviour {
 
         var ai = new School(School.Type.ai, "Online univeristy") { TermProgressSpeed = 0.1f };
         var cyborgs = new School(School.Type.cyborgs, "School of cybornetics") {
-                                    TermProgressSpeed = 0.1f,
+                                    TermProgressSpeed = 0.15f,
                                     LeedsTo = { ai },
                                         Requirements = {Requirement(ResourceType.Electricity, 160000000000000L),
                                         Requirement(ResourceType.Silicon, 1600000000000L)
@@ -41,7 +41,7 @@ public class Schools : MonoBehaviour {
         };
 
         var machines = new School(School.Type.machines, "Machineries") {
-                                        TermProgressSpeed = 0.1f,
+                                        TermProgressSpeed = 0.4f,
                                         LeedsTo = { cyborgs, vehicles },
                                         Requirements = { Requirement(ResourceType.Iron, 19000000000L),
                                                         Requirement(ResourceType.Coal, 4300000000000L),
@@ -49,7 +49,7 @@ public class Schools : MonoBehaviour {
                                                         Requirement(ResourceType.Silicon, 160000000L)}
         };
         var water = new School(School.Type.water, "Block: Water") {
-                                    TermProgressSpeed = 0.1f,
+                                    TermProgressSpeed = 0.25f,
                                     LeedsTo = { machines },
                                     Requirements = { Requirement(ResourceType.Iron, 20000000), Requirement(ResourceType.Coal, 8000000000), Requirement(ResourceType.Tree, 3600000000) }
         };
@@ -63,7 +63,7 @@ public class Schools : MonoBehaviour {
         };
 
         var roundThings = new School(School.Type.roundThings, "School of round things") {
-                                        TermProgressSpeed = 0.1f,
+                                        TermProgressSpeed = 0.16f,
                                         LeedsTo = { water, earth },
                                         Requirements = { Requirement(ResourceType.Tree, 20000), Requirement(ResourceType.Stone, 50000) }
         };
@@ -71,7 +71,7 @@ public class Schools : MonoBehaviour {
 
         var computers = new School(School.Type.computers, "Silicon university") { TermProgressSpeed = 0.1f };
         var electricity = new School(School.Type.electricity, "Ark university") {
-                                        TermProgressSpeed = 0.1f,
+                                        TermProgressSpeed = 0.64f,
                                         LeedsTo = { computers },
                                         Requirements = { Requirement(ResourceType.Silicon, 100000),
                                                         Requirement(ResourceType.Iron, 200000000),
@@ -80,7 +80,7 @@ public class Schools : MonoBehaviour {
 
         var arts = new School(School.Type.arts, "Art schoool") { TermProgressSpeed = 0.1f };
         var fire = new School(School.Type.fire, "Block Fire") {
-            TermProgressSpeed = 0.1f,
+            TermProgressSpeed = 0.5f,
             LeedsTo = { arts, electricity },
             Requirements = { Requirement(ResourceType.Iron, 4000),
                              Requirement(ResourceType.Tree, 10000)}
@@ -88,13 +88,13 @@ public class Schools : MonoBehaviour {
 
         var philosphy = new School(School.Type.philosphy, "Thinking university") { TermProgressSpeed = 0.1f };
         var wind = new School(School.Type.wind, "Block: Wind") {
-                                    TermProgressSpeed = 0.1f,
+                                    TermProgressSpeed = 0.23f,
                                     LeedsTo = { philosphy },
                                     Requirements = { Requirement(ResourceType.Stone, 500) }
         };
 
         var nonRoundThings = new School(School.Type.nonRoundThings, "Nonround university") {
-                                            TermProgressSpeed = 0.1f,
+                                            TermProgressSpeed = 0.12f,
                                             LeedsTo = { fire, wind },
                                             Requirements = { Requirement(ResourceType.Tree, 1000) }
         };

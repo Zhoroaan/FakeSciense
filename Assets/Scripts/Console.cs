@@ -14,7 +14,7 @@ public class Console : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        var color = new Color(0.074f, 0.047f, 0.03f);
+        var color = new Color(0.69f, 0.62f, 0.59f);
         textStyle.normal.textColor = color;
         textStyle.hover.textColor = color;
         textStyle.richText = true;
@@ -42,7 +42,7 @@ public class Console : MonoBehaviour {
     }
 
     private void DrawConsoleLines(int xPos, int yPos) {
-        scrollAnimationTime = Mathf.Max(scrollAnimationTime - Time.deltaTime, 0);
+        scrollAnimationTime = Mathf.Max(Mathf.Min(scrollAnimationTime, 3) - Time.deltaTime, 0);
 
         int elementCount = textLines.Count;
         // Start from the back so we can stop when lines cannot be seen any longer

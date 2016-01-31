@@ -54,6 +54,7 @@ public class School {
     public School(Type type, string name) {
         SchoolType = new SchoolTypeInformation() { SchoolType = type, Name = name };
         SetSchoolName(type, name);
+        Name = name;
         Qualifications = new List<SchoolTypeInformation>();
         LeedsTo = new List<School>();
         Requirements = new List<UpgradeRequirement>();
