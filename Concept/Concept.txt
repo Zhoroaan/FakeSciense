@@ -113,8 +113,9 @@ Inventions
 Tasks for Sunday:
 	# Add resource gatherers
 	# Show resources
-	- Add students based on number of people
-	- Show resources beeing gathered
+	# Add students based on number of people
+	# Show resources beeing gathered
+	- Limit mineable resources
 	- Allow to assign workers to resource
 	- Allow to remove workers from resource
 	- Add resource cost for schools
