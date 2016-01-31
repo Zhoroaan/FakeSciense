@@ -52,15 +52,15 @@ public class BuildResource {
 
     private BuildResource(bool initilizedResource) {
         if(initilizedResource) {
-            Count = 100000;
+            Count = 10000;
             resources = new BuildResource[] {
+                new BuildResource(false) { Type = ResourceType.Stone, Name = "Stone" },
                 new BuildResource(false) { Type = ResourceType.Tree, Name = "Trees" },
                 new BuildResource(false) { Type = ResourceType.Coal, Name = "Coal" },
                 new BuildResource(false) { Type = ResourceType.Iron, Name = "Iron" },
-                new BuildResource(false) { Type = ResourceType.Beryllium, Name = "Beryllium" },
                 new BuildResource(false) { Type = ResourceType.Electricity, Name = "Electricity" },
                 new BuildResource(false) { Type = ResourceType.Silicon, Name = "Silicon" },
-                new BuildResource(false) { Type = ResourceType.Stone, Name = "Stone" }
+                new BuildResource(false) { Type = ResourceType.Beryllium, Name = "Beryllium" }
             };
         }
     }

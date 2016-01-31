@@ -18,7 +18,7 @@ public class Console : MonoBehaviour {
         textStyle.hover.textColor = color;
         textStyle.richText = true;
         AddText("Start Game");
-        AddText("You start of with 100K people");
+        AddText("You start of with 10K people");
     }
 
     // Update is called once per frame
