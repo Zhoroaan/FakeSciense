@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System;
 using UnityEngine.UI;
+using Assets.Scripts;
 
 public class ResourcePool : MonoBehaviour {
     public ResourceType resourceType;
@@ -46,7 +47,7 @@ public class ResourcePool : MonoBehaviour {
                 BuildResource.GetResource(resourceType).Count += (Int64)resourcesInPool;
                 resourcesInPool = 0;
             } else {
-                resourcesInPool += (double)Time.deltaTime * peopleInPool * 0.01;
+                resourcesInPool += (double)Time.deltaTime * peopleInPool * 0.01 * ResourceGatherCalculator.Calculate(resourceType);
             }
         }
     }

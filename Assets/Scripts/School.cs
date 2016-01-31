@@ -33,6 +33,17 @@ public class School {
         philosphy,
         wind,
         nonRoundThings,
+        _Count
+    }
+
+    static String[] schoolNames = new string[(int)Type._Count];
+
+    static public void SetSchoolName(Type type, string name) {
+        schoolNames[(int)type] = name;
+    }
+
+    static public String GetSchoolName(Type type) {
+        return schoolNames[(int)type];
     }
 
     public class SchoolTypeInformation {
@@ -42,6 +53,7 @@ public class School {
 
     public School(Type type, string name) {
         SchoolType = new SchoolTypeInformation() { SchoolType = type, Name = name };
+        SetSchoolName(type, name);
         Qualifications = new List<SchoolTypeInformation>();
         LeedsTo = new List<School>();
         Requirements = new List<UpgradeRequirement>();
